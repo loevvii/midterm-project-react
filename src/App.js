@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import AddItem from './components/additem';
+import ItemDisplay from './components/itemdisplay';
 import './App.css';
 
 function App() {
+  // Move the inventory state to App.js so it's accessible by both components
+  const [inventory, setInventory] = useState([]);
+
+  // Function to update inventory in the form
+  const addItemToInventory = (newItem) => {
+    setInventory([...inventory, newItem]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Reactss
-        </a>
-      </header>
+    <div>
+      {/* Pass the addItemToInventory function to the form so it can add items */}
+      <AddItem addItemToInventory={addItemToInventory} />
+      
+      {/* Render the ItemDisplay separately */}
+      <ItemDisplay inventory={inventory} />
     </div>
   );
 }
