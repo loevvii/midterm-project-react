@@ -17,7 +17,10 @@ const SearchItem = ({ inventory }) => {
   };
 
   return (
-    <div>
+    <section className="jumbotron jumbotron-fluid text-center bg-img pt-3 d-flex justify-content-center align-items-center">
+    <div className="container text-center d-flex flex-column justify-content-center align-items-center vh-100">
+    <img className= "bgimage4"src='bg4.jpg' width="1920" height="1080"></img>
+    <div className='formcontainer table-container'>
       <h3>Search Item</h3>
       <input
         type="text"
@@ -40,6 +43,8 @@ const SearchItem = ({ inventory }) => {
       
       {message && <p>{message}</p>}
     </div>
+    </div>
+    </section>
   );
 };
 

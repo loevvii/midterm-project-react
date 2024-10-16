@@ -17,7 +17,10 @@ const SortItems = ({ inventory }) => {
   };
 
   return (
-    <div>
+    <section className="jumbotron jumbotron-fluid text-center bg-img pt-3 d-flex justify-content-center align-items-center">
+    <div className="container text-center d-flex flex-column justify-content-center align-items-center vh-100">
+    <img className= "bgimage4"src='bg4.jpg' width="1920" height="1080"></img>
+    <div className='formcontainer table-container'>
       <h3>Sort Items</h3>
       <label>
         Sort By:
@@ -59,6 +62,8 @@ const SortItems = ({ inventory }) => {
         </tbody>
       </table>
     </div>
+    </div>
+    </section>
   );
 };
 

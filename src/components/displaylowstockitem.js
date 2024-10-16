@@ -4,7 +4,10 @@ const DisplayLowStockItems = ({ inventory }) => {
   const lowStockItems = inventory.filter(item => item.quantity <= 5);
 
   return (
-    <div>
+    <section className="jumbotron jumbotron-fluid text-center bg-img pt-3 d-flex justify-content-center align-items-center">
+    <div className="container text-center d-flex flex-column justify-content-center align-items-center vh-100">
+    <img className= "bgimage4"src='bg4.jpg' width="1920" height="1080"></img>
+    <div className='table-container'>
       <h3>Low Stock Items</h3>
       <table>
         <thead>
@@ -35,6 +38,8 @@ const DisplayLowStockItems = ({ inventory }) => {
         </tbody>
       </table>
     </div>
+    </div>
+    </section>
   );
 };
 

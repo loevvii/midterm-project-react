@@ -12,7 +12,10 @@ const DisplayByCategory = ({ inventory }) => {
   const filteredItems = inventory.filter(item => item.category === selectedCategory);
 
   return (
-    <div>
+    <section className="jumbotron jumbotron-fluid text-center bg-img pt-3 d-flex justify-content-center align-items-center">
+    <div className="container text-center d-flex flex-column justify-content-center align-items-center vh-100">
+    <img className= "bgimage4"src='bg4.jpg' width="1920" height="1080"></img>
+    <div className='table-container'>
       <h3>Display Items by Category</h3>
 
       <div>
@@ -56,6 +59,8 @@ const DisplayByCategory = ({ inventory }) => {
         </>
       )}
     </div>
+    </div>
+    </section>
   );
 };
 

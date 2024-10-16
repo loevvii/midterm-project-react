@@ -38,7 +38,10 @@ const UpdateItem = ({ inventory, updateItemInInventory }) => {
   };
 
   return (
-    <div>
+    <section className="jumbotron jumbotron-fluid text-center bg-img pt-3 d-flex justify-content-center align-items-center">
+    <div className="container text-center d-flex flex-column justify-content-center align-items-center vh-100">
+    <img className= "bgimage4"src='bg4.jpg' width="1920" height="1080"></img>
+    <div className='formcontainer table-container'>
       <h3>Update Item</h3>
       <form onSubmit={handleUpdate}>
         <div>
@@ -79,6 +82,8 @@ const UpdateItem = ({ inventory, updateItemInInventory }) => {
       {/* Display the message after submission */}
       {message && <p>{message}</p>}
     </div>
+    </div>
+    </section>
   );
 };
 
