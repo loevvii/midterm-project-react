@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 
 const ItemDisplay = ({ inventory = [] }) => {
     return (
-      <div className="itemdisplay">
+        <section className="jumbotron jumbotron-fluid text-center bg-img pt-3 d-flex justify-content-center align-items-center">
+        <div className="container text-center d-flex flex-column justify-content-center align-items-center vh-100">
+        <img className= "bgimage4"src='bg4.jpg' width="1920" height="1080"></img>
+      <div className="itemdisplay table-container">
         {inventory.length > 0 ? (
           <table border="1" cellPadding="10" cellSpacing="0">
             <thead>
@@ -30,6 +33,8 @@ const ItemDisplay = ({ inventory = [] }) => {
           <p>No items in the inventory.</p>
         )}
       </div>
+      </div>
+      </section>
     );
   };
   

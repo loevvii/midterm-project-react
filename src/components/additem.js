@@ -23,7 +23,7 @@ const AddItem = ({ addItemToInventory, inventory }) => {
     
     setItem({
       ...item,
-      [name]: sanitizedValue,
+      [name]: name === 'quantity' || name === 'price' ? Number(value) : value,
     });
   };
 
@@ -57,7 +57,10 @@ const AddItem = ({ addItemToInventory, inventory }) => {
   };
 
   return (
-    <div className='additemcontainer'>
+    <section className="jumbotron jumbotron-fluid text-center bg-img pt-3 d-flex justify-content-center align-items-center">
+    <div className="container text-center d-flex flex-column justify-content-center align-items-center vh-100">
+        <img className= "bgimage4"src='bg4.jpg' width="1920" height="1080"></img>
+    <div className='formcontainer table-container'>
       <h2>Add Item to Inventory</h2>
       <form onSubmit={handleSubmit}>
         {/* Form Fields */}
@@ -119,6 +122,8 @@ const AddItem = ({ addItemToInventory, inventory }) => {
       </form>
       {message && <p>{message}</p>}
     </div>
+    </div>
+    </section>
   );
 };
 

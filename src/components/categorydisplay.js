@@ -12,7 +12,10 @@ const DisplayByCategory = ({ inventory }) => {
   const filteredItems = inventory.filter(item => item.category === selectedCategory);
 
   return (
-    <div>
+    <section className="jumbotron jumbotron-fluid text-center bg-img pt-3 d-flex justify-content-center align-items-center">
+    <div className="container text-center d-flex flex-column justify-content-center align-items-center vh-100">
+    <img className= "bgimage4"src='bg4.jpg' width="1920" height="1080"></img>
+    <div className='table-container'>
       <h3>Display Items by Category</h3>
 
       <div>
@@ -30,7 +33,7 @@ const DisplayByCategory = ({ inventory }) => {
         <>
           <h4>Items in Category: {selectedCategory}</h4>
           {filteredItems.length > 0 ? (
-            <table>
+            <table border="1" cellPadding="10" cellSpacing="0">
               <thead>
                 <tr>
                   <th>ID</th>
@@ -45,7 +48,7 @@ const DisplayByCategory = ({ inventory }) => {
                     <td>{item.id}</td>
                     <td>{item.name}</td>
                     <td>{item.quantity}</td>
-                    <td>{item.price.toFixed(2)}</td> {/* Ensure price has two decimal points */}
+                    <td>{typeof item.price === 'number' ? item.price.toFixed(2) : 'Invalid Price'}</td> {/* Ensure price has two decimal points */}
                   </tr>
                 ))}
               </tbody>
@@ -56,6 +59,8 @@ const DisplayByCategory = ({ inventory }) => {
         </>
       )}
     </div>
+    </div>
+    </section>
   );
 };
 

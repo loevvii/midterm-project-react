@@ -4,7 +4,14 @@ import ItemDisplay from './components/itemdisplay';
 import UpdateItem from './components/updateitem';
 import RemoveItem from './components/removeitem';
 import CategoryDisplay from './components/categorydisplay';
+import SearchItem from './components/searchitem';
+import SortItems from './components/sortitem';
+import DisplayLowStockItems from './components/displaylowstockitem';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/navbar';
+import Home from './components/home';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [inventory, setInventory] = useState([]);
@@ -30,14 +37,22 @@ function App() {
 
 
   return (
-    <div>
-      {/* Pass inventory and add, update, remove functions to components */}
-      <AddItem addItemToInventory={addItemToInventory} inventory={inventory} />
-      <ItemDisplay inventory={inventory} />
-      <UpdateItem inventory={inventory} updateItemInInventory={updateItemInInventory} />
-      <RemoveItem inventory={inventory} removeItemFromInventory={removeItemFromInventory} />
-      <CategoryDisplay inventory={inventory} />
-    </div>
+    <Router>
+    <div className="App">
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/add-item" element={ <AddItem addItemToInventory={addItemToInventory} inventory={inventory} />}/>
+          <Route path="/update-item" element={<UpdateItem inventory={inventory} updateItemInInventory={updateItemInInventory} />}/>
+          <Route path="/remove-item" element={<RemoveItem inventory={inventory} removeItemFromInventory={removeItemFromInventory} />}/>
+          <Route path="/display-category" element={<CategoryDisplay inventory={inventory} />}/>
+          <Route path="/display-all" element={<ItemDisplay inventory={inventory} />}/>
+          <Route path="/search-item" element={<SearchItem inventory={inventory}/>}/>
+          <Route path="/sort-items" element={<SortItems inventory={inventory}/>}/>
+          <Route path="/display-low-stock" element={<DisplayLowStockItems inventory={inventory}/>}/>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
