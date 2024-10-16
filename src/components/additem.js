@@ -111,14 +111,14 @@ const AddItem = ({ addItemToInventory, inventory }) => {
             value={item.category}
             onChange={handleInputChange}
           >
-            <option value="blank"></option>
+            <option value=""disabled>--Select a Category--</option>
             <option value="Electronics">Electronics</option>
             <option value="Clothing">Clothing</option>
             <option value="Food">Food</option>
             <option value="Books">Books</option>
           </select>
         </div>
-        <button type="submit">Add Item</button>
+        <button type="submit" disabled={!item.category}>Add Item</button>
       </form>
       {message && <p>{message}</p>}
     </div>
