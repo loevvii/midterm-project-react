@@ -30,7 +30,7 @@ const DisplayByCategory = ({ inventory }) => {
         <>
           <h4>Items in Category: {selectedCategory}</h4>
           {filteredItems.length > 0 ? (
-            <table>
+            <table border="1" cellPadding="10" cellSpacing="0">
               <thead>
                 <tr>
                   <th>ID</th>
@@ -45,7 +45,7 @@ const DisplayByCategory = ({ inventory }) => {
                     <td>{item.id}</td>
                     <td>{item.name}</td>
                     <td>{item.quantity}</td>
-                    <td>{item.price.toFixed(2)}</td> {/* Ensure price has two decimal points */}
+                    <td>{typeof item.price === 'number' ? item.price.toFixed(2) : 'Invalid Price'}</td> {/* Ensure price has two decimal points */}
                   </tr>
                 ))}
               </tbody>

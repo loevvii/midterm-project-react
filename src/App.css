@@ -1,5 +1,13 @@
+@font-face {
+  font-family: ingpin;
+  src: url('./components/fonts/ingpin.ttf');
+  text-shadow: #61dafb;
+}
+
 .App {
   text-align: center;
+  background-color: #282c34;
+  font-family: ingpin;
 }
 
 .App-logo {
@@ -37,7 +45,7 @@
   }
 }
 
-/* 
+
   .additemcontainer {
   background-color: red;
   border-radius: 25px;
@@ -48,9 +56,37 @@
   transform: translate(-50%, -50%);
   padding: 7rem;
   align-content: left !important;
+  box-shadow: 5px 5px 0px #181717;
 }
-*/
 
+.nav-item {
+  
+  background-color: whitesmoke;
+  border-radius: 10px;
+  margin-right: 1rem;
+}
+
+.bgimage{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.hometext{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  color: aliceblue;
+}
+
+.navbar{
+  margin-top: 5rem;
+  z-index: 1000;
+}
 /*
 .itemdisplay {
   background-color: blue;

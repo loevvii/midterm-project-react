@@ -23,7 +23,7 @@ const AddItem = ({ addItemToInventory, inventory }) => {
     
     setItem({
       ...item,
-      [name]: sanitizedValue,
+      [name]: name === 'quantity' || name === 'price' ? Number(value) : value,
     });
   };
 
